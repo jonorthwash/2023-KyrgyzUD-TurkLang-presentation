@@ -117,8 +117,14 @@
 									<li>Kyrgyz syntax</li>
 								</ul>
 								<li>Background on corpus</li>
-								<li>Pros and cons of genres</li>
-								<li>Annotation issues</li>
+								<!-- li>Pros and cons of genres</li -->
+								<li>Selected annotation issues</li>
+								<ul class="shrink">
+									<li>Copula tokenisation</li>
+									<li>"Small" words (<ex>да</ex>, <ex>эле</ex>, <ex>бар/жок</ex>, <ex>керек</ex>)</li>
+									<li>Null-headed clauses (RCs, locative &amp; genitive expressions)</li>
+									<li>Inflection vs. derivation</li>
+								</ul>
 							</ul>
 						</div>
 					</div>
@@ -126,23 +132,30 @@
 
 				<section>
 					<h2>Background on corpus</h2>
+					<div class="highlight-box">
+					<h4>Timeline</h4>
 					<ul>
 						<li><bbb>2020</bbb>: <span class="highlight">Anna</span> puts together 86-sentence proverbs corpus, with supervision from <span class="highlight">Jonathan</span></li>
-						<ul>
-							<li>Used Apertium (<tt><a href="https://github.com/apertium/apertium-kir">apertium-kir</a></tt>) to pre-process sentences (tokenisation, morphological analysis)</li>
-						</ul>
 						<li><bbb>2021</bbb>: <span class="highlight">Aida</span> starts working with students on proverbs, literature, and novel sentences</li>
 						<li><bbb>2023</bbb>: current state:</li>
-						<ul>
+						<ul class="shrink">
 							<li>sentences: ≥230</li>
 							<li>tokens: ≥1634</li>
 							<li>Ongoing efforts to combine, check, unify annotations, add metadata, and expand</li>
 						</ul>
 						<li><bbb>Future</bbb>: submit as one large corpus</li>
 					</ul>
+					</div>
+					<div class="highlight-box">
+						<h4>Tools leveraged in creation</h4>
+						<ul>
+							<li>Apertium morphological transducer (<tt><a href="https://github.com/apertium/apertium-kir">apertium-kir</a></tt>):<br/>to pre-process sentences (tokenisation, morphological analysis)</li>
+							<li><a href="https://jonorthwash.github.io/ud-annotatrix/">UD Annotatrix</a>: dependency annotation interface</li>
+						</ul>
+					</div>
 				</section>
 
-				<section>
+				<!-- section>
 					<h2>Genres: pros and cons</h2>
 
 					<div class="box-red">
@@ -184,7 +197,7 @@
 8	.	.	PUNCT	_	_	6	punct	_	_
 						</code></pre>
 					</div>
-				</section>
+				</section -->
 
 				<section>
 					<h2>Challenges: copula tokenisation</h2>
@@ -293,7 +306,7 @@
 
 
 
-				<section>
+				<!-- section>
 					<h2>Challenges: direction of parataxis (conjunct??) attachment</h2>
 					<pre><code class="conllu">
 # sent_id = proverbs:0
@@ -355,9 +368,9 @@
 6	өлбөйт	өл	VERB	_	Mood=Ind|Number=Sing|Person=3|Polarity=Neg|Tense=Aor|VerbForm=Fin	0	root	_	_
 7	.	.	PUNCT	_	_	6	punct	_	_
 						</code></pre>
-				</section>
+				</section -->
 
-				<section>
+				<!-- section>
 					<h2> Challenges: analysis of fragments</h2>
 					<pre><code class="conllu">
 # sent_id = proverbs:34
@@ -389,7 +402,7 @@
 8	.	.	PUNCT	_	_	6	punct	_	_
 					</code></pre>
 
-				</section>
+				</section-->
 
 				<section>
 					<h2>Challenges: small words: эле</h2>
@@ -562,7 +575,7 @@
 						<li>Two options:</li>
 						<ul>
 							<li>Treat simply as "clause": <tt>ccomp</tt>, <tt>csubj</tt></li>
-							<li>Treat as noun (not present): <tt>obj</tt>, <tt>nsubj</tt> <span class="fragment">(<span class="highlight-green">✔</span>?)</span></li>
+							<li>Treat as noun (not present): <tt>obj</tt>, <tt>nsubj</tt> <span class="fragment">(<span class="highlight-green">✔</span>)</span></li>
 						</ul>
 					</ul>
 					<pre><code class="conllu">
@@ -575,7 +588,7 @@
 # labels = cg-checked-jnw dep-revised2x-jnw CHECK
 1	Колуң	кол	NOUN	_	Case=Nom|Number[psor]=Sing|Person[psor]=2	3	obl	_	_
 2	менен	менен	ADP	_	_	1	case	_	_
-3	кылганды	кыл	VERB	_	Case=Acc|Tense=Past|VerbForm=Part	7	obj/ccomp?	_	_
+3	кылганды	кыл	VERB	_	Case=Acc|Tense=Past|VerbForm=Part	7	obj(/ccomp)	_	_
 4	,	,	PUNCT	_	_	7	punct	_	_
 5	мойнуң	моюн	NOUN	_	Case=Nom|Number[psor]=Sing|Person[psor]=2	7	obl	_	_
 6	менен	менен	ADP	_	_	5	case	_	_
@@ -593,7 +606,7 @@
 1-2	Балалуу	_	_	_	_	_	_	_	_
 1	Бала	бала	NOUN	_	_	3	xcomp	_	_
 2	луу	луу	ADP	_	_	1	case	_	_
-3	болбогон	бол	VERB	_	Case=Nom|Polarity=Neg|Tense=Past|VerbForm=Part	5	nsubj/csubj??	_	_
+3	болбогон	бол	VERB	_	Case=Nom|Polarity=Neg|Tense=Past|VerbForm=Part	5	nsubj(/csubj)	_	_
 4	кубанганды	кубан	VERB	_	Case=Acc|Tense=Past|VerbForm=Ger	5	obj	_	_
 5	билбеген	бил	VERB	_	Mood=Ind|Number=Sing|Person=3|Polarity=Neg|Tense=Past|VerbForm=Fin	0	root	_	_
 6	.	.	PUNCT	_	_	5	punct	_	_
@@ -618,16 +631,16 @@
 					</section>
 				</section>
 
-				<section>
+				<!-- section>
 					<h2>Challenges: Auxiliary constructions</h2>
 					<ul style="width: 100%">
 						<li>INF ("converbs") + AUX very common <span class="shrink">(<a href="https://doi.org/10.1515/flin-2022-2045">doi.org/10.1515/flin-2022-2045</a>)</span>:<br/>
 						<ex>презентация <u>берип жатам</u></ex> <gl>I <u>am giving</u> a presentation</gl></li>
-						<li>Problems for annotation:</li>
+						<li>Problems for annotation:</li -->
 						<!-- ul class="shrink">
 							<li>With VADJ AUX (relative clauses), <tt>acl</tt> is attached to INF</li>
 						</ul -->
-					</ul>
+					<!-- /ul>
 
 					<div class="highlight-box">
 						<h4>With VADJ AUX (relative clauses), <tt>acl</tt> is attached to INF</h4>
@@ -649,14 +662,14 @@
 7	_	э	AUX	_	Mood=Ind|Number=Plur|Person=3|Tense=Aor|VerbForm=Fin	6	cop	_	_
 8	.	.	PUNCT	_	_	6	punct	_	_
 					</code></pre>
-					</div>
+					</div -->
 
 					<!-- ul style="width: 100%">
 						<ul class="shrink">
 							<li>Is <ex>э-</ex> an auxiliary (e.g., pluperfect construction)? 
 						</ul>
 					</ul -->
-					<div class="highlight-box">
+					<!-- div class="highlight-box">
 						<h4>Is <ex>э-</ex> an auxiliary (e.g., pluperfect construction)?</h4>
 					<pre><code class="conllu">
 # text[gloss] = that place-DAT go-PAST I.was .
@@ -666,7 +679,7 @@
 4	элем	_	AUX	_	_	3	aux	_	_
 5	.	_	PUNCT	_	_	3	punct	_	_
 					</code></pre>
-					</div>
+					</div -->
 					<!-- ul style="width: 100%">
 						<ul class="shrink">
 
@@ -674,7 +687,7 @@
 
 						</ul>
 					</ul -->
-					<div class="highlight-box">
+					<!-- div class="highlight-box">
 						<h4>What about periphrastic negative?  Can we treat whole thing as one verb form?</h4>
 					<pre><code class="conllu">
 # text[gloss] = that place-DAT go-PAST_not_was-I .
@@ -684,7 +697,7 @@
 4	.	_	PUNCT	_	_	3	punct	_	_
 					</code></pre>
 					</div>
-				</section>
+				</section -->
 
 				<section>
 					<h2>Challenges: level of analysis</h2>
@@ -722,10 +735,10 @@
 					</div>
 				</section>
 
-				<section>
+				<!-- section>
 					<h2>Impromptu notes on "-ki"</h2>
 					<div class="highlight-box"><a href="https://wiki.apertium.org/wiki/Turkic_languages/Ki">https://wiki.apertium.org/wiki/Turkic_languages/Ki</a></div>
-				</section>
+				</section -->
 
 				<section>
 					<h2>Ракмат!</h2>
