@@ -839,3 +839,10 @@ g.text text:nth-of-type(2) tspan {
 .r-stack {
 	align-items: start;
 }
+refs {
+	font-size: 50%;
+}
+
+ref {
+	color: silver;
+}
