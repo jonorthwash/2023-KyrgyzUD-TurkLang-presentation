@@ -850,8 +850,47 @@
 				<section>
 					<h2>Challenges: -NIKI</h2>
 					<ul>
-						<li></li>
+						<li>substantivised form of genitive</li>
+						<li>also must treat as having a null head</li>
+						<li>retokenisation is needed</li>
 					</ul>
+					<pre><code class="conllu">
+# sent_id = 1B
+# text = Жубайым дачадагы балдар бөлмөсүнүн терезесин шаша-буша тазалап, ашкананыкын тазалабай коюптур.
+# text[en] = My spouse cleaned the windows of the children's room at the summer house hastily, but didn't clean the kitchen's.
+# text[tr] = Eşim yazlıktaki çocuk odasının penceresini apar topar temizlemiş, mutfağınkini temizlememişti.
+1	Жубайым	жубай	NOUN	n.px1sg.nom	Case=Nom|Number[psor]=Sing|Person[psor]=1	13	advcl	_	_
+2	дачадагы	дача	NOUN	n.loc.attr	Case=Loc|Case=Nom	3	nmod:loc	_	_
+3	балдар	бала	NOUN	n.pl.nom	Case=Nom|Number=Plur	4	nmod:poss	_	_
+4	бөлмөсүнүн	бөлмө	NOUN	n.px3sp.gen	Case=Gen|Number[psor]=Plur,Sing|Person[psor]=3	5	nmod:poss	_	_
+5	терезесин	терезе	NOUN	n.px3sp.acc	Case=Acc|Number[psor]=Plur,Sing|Person[psor]=3	9	obj	_	_
+6	шаша	шаш	VERB	v.iv.gna_impf	Aspect=Imp|VerbForm=Conv	9	advcl	_	SpaceAfter=No
+7	-	-	PUNCT	guio	_	6	punct	_	SpaceAfter=No
+8	буша	буш	VERB	v.iv.gna_impf	Aspect=Imp|VerbForm=Conv	6	fixed	_	_
+9	тазалап	тазала	VERB	v.tv.gna_perf	Aspect=Perf|VerbForm=Conv	13	advcl	_	SpaceAfter=No
+10	,	,	PUNCT	cm	_	12	punct	_	_
+11-12	ашкананыкын	_	_	_	_	_	_	_	_
+11	ашкананы	ашкана	NOUN	n.gen	Case=Gen	12	nmod:poss	_	SpaceAfter=No
+12	кын	_	NOUN	n.acc	Case=Acc	13	obj	_	SpaceAfter=No
+13	тазалабай	тазала	VERB	v.tv.neg.prc_perf	Aspect=Perf|Polarity=Neg|VerbForm=Cov	0	root	_	_
+14	коюптур	кой	AUX	vaux.ifi.evid.p3.sg	Evident=Nfh|Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin	13	aux	_	SpaceAfter=No
+15	.	.	PUNCT	sent	_	13	punct	_	_
+					</code></pre>
+					<div class="highlight-box">
+						<h4>Other analyses</h4>
+						<ul>
+							<li>Kyrgyz <refs>(<ref>Benli 2023</ref>)</refs></li>
+							<ul class="shrink">
+								<li>single token: <tt>ADJ</tt>, <tt>amod</tt></li>
+							</ul>
+							<li>Kazakh <refs>(<ref>Tyers &amp; Washington 2015</ref>)</refs></li>
+							<ul class="shrink">
+								<li>multiple tokens, but second one is <tt>case</tt> dependent on first</li>
+								<li>doesn't capture the analysis of two separate participants in the event</li>
+							</ul>
+						</ul>
+					</div>
+
 				</section>
 
 				<section>
