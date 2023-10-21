@@ -201,28 +201,48 @@
 
 				<section>
 					<h2>Challenges: copula tokenisation</h2>
-						<div class="box">
-							<h3>Defective copula verb <ex>э-</ex></h3>
-							<ul>
-								<li>Irregular attested forms:</li>
-								<ul class="shrink">
-									<li><span class="highlight">non-past tense</span>: endings on predicate (<ex>үйдөмүн</ex>, not <ex class="bad">үйдө эймин</ex>)</li>
-									<li><span class="highlight">direct past tense</span>: <ex>эле</ex> (not <ex class="bad">эди</ex>) + past-tense person endings</li>
-									<li>irregular-looking <span class="highlight">past verbal noun</span>: <ex>экен</ex> (not <ex class="bad">эген</ex>)</li>
-								</ul>
-								<li>other words derived from <ex>э-</ex>: <ex>эмес</ex> <gl>not</gl>, <ex>экен</ex> <gl>evidently</gl></li>
-								<li>Missing other forms:</li>
-								<ul class="shrink">
-									<li>tenses, non-finite forms: <ex class="bad">эчү</ex>, <ex class="bad">эген</ex>, <ex class="bad">өө</ex>, <ex class="bad">эш</ex>, <ex class="bad">ээр</ex>, <ex class="bad">эп</ex>, <ex class="bad">эй</ex>, etc.</li>
-									<li>negative forms: <ex class="bad">эбеле</ex></.i>
+
+						<div class="r-stack">
+							<div class="box fragment fade-out" data-fragment-index="3">
+								<h3>Defective copula verb <ex>э-</ex></h3>
+								<ul>
+									<li>Irregular attested forms:</li>
+									<ul class="shrink">
+										<li><span class="highlight">non-past tense</span>: endings on predicate (<ex>үйдөмүн</ex>, not <ex class="bad">үйдө эймин</ex>)</li>
+										<li><span class="highlight">direct past tense</span>: <ex>эле</ex> (not <ex class="bad">эди</ex>) + past-tense person endings</li>
+										<li>irregular-looking <span class="highlight">past verbal noun</span>: <ex>экен</ex> (not <ex class="bad">эген</ex>)</li>
+									</ul>
+									<li>other words derived from <ex>э-</ex>: <ex>эмес</ex> <gl>not</gl>, <ex>экен</ex> <gl>evidently</gl></li>
+									<li>Missing other forms:</li>
+									<ul class="shrink">
+										<li>tenses, non-finite forms: <ex class="bad">эчү</ex>, <ex class="bad">эген</ex>, <ex class="bad">өө</ex>, <ex class="bad">эш</ex>, <ex class="bad">ээр</ex>, <ex class="bad">эп</ex>, <ex class="bad">эй</ex>, etc.</li>
+										<li>negative forms: <ex class="bad">эбеле</ex></.i>
+									</ul>
 								</ul>
 							</div>
+							<div class="highlight-box fragment current-visible" data-fragment-index="3" style="padding-bottom: 0.5em">
+								<h4>Other UD corpora</h4>
+								<ul>
+									<li>Kazakh <refs>(<ref>Tyers &amp; Washington 2015</ref>)</refs></li>
+									<ul class="shrink">
+										<li>Tokenise copula separately (like we do)</li>
+										<li>Except not for 3rd person (when null)</li>
+									</ul>
+
+									<li>Kyrgyz <refs>(<ref>Benli 2023</ref>)</refs></li>
+									<ul class="shrink">
+										<li>no separate tokenisation</li>
+										<li>predicates with copula affixes sometimes analysed as verbs</li>
+										<li><ex>эле</ex> analysed as <tt>VERB</tt> and <tt>compound:svc</tt> dependent of non-verbal predicate</li>
+									</ul>
+								</ul>
+							</div>
+						</div>
+
 						<ul>
 							<li>The problem: tokenise present and past in parallel way</li>
 							<li class="fragment" data-fragment-index="2">A solution: supertokens</li>
 						</ul>
-						<!-- div class="r-stack" -->
-						<!-- div class="fragment" -->
 						<div class="float-left">
 							<ex>Мен үйдө<u>мүн</u>.</ex> <gl>I <u>am</u> at home.</gl><br/>
 							<pre class="fragment" data-fragment-index="2"><code class="conllu">
@@ -245,20 +265,6 @@
 3	элем	э	AUX	_	_	2	cop	_	_
 4	.	.	PUNCT	_	_	2	punct	_	_
 							</code></pre>
-						</div>
-						<!-- /div -->
-						<div class="highlight-box fragment">
-							<h4>Other UD corpora</h4>
-							<ul>
-								<li>Kyrgyz <refs>(<ref>Benli 2023</ref>)</refs></li>
-									<ul>
-										<li>no separate tokenisation</li>
-										<li>predicates with copula affixes sometimes analysed as verbs</li>
-										<li><ex>эле</ex> analysed as <tt>VERB</tt> and <tt>compound:svc</tt> dependent of non-verbal predicate</li>
-									</ul>
-								<li>Kazakh - </li>
-							</ul>
-						<!-- /div -->
 						</div>
 
 				</section>
@@ -494,20 +500,20 @@
 						</code></pre>
 					</div>
 					<div class="r-stack" style="width:100%">
-					<div class="highlight-box fragment current-visible" style="width:100%">
-						<h4>"even/also" - CCONJ, <tt>cc</tt>?</h4>
-						<pre><code class="conllu">
+						<div class="highlight-box fragment current-visible" style="width:100%">
+							<h4>"even/also" - CCONJ, <tt>cc</tt>?</h4>
+							<pre><code class="conllu">
 # text[gloss] = my.father even/also against was .
 1	Атам	_	NOUN	_	_	4	nsubj	_	_
 2	да	_	CCONJ	_	_	1	cc	_	_
 3	каршы	_	ADJ	_	_	4	xcomp	_	_
 4	болду	_	VERB	_	_	0	root	_	_
 5	.	_	PUNCT	_	_	4	punct	_	_
-						</code></pre>
-					</div>
-					<div class="highlight-box fragment" style="width:100%">
-						<h4>"both … and" - CCONJ, <tt>cc</tt>?</h4>
-						<pre><code class="conllu">
+							</code></pre>
+						</div>
+						<div class="highlight-box fragment" style="width:100%">
+							<h4>"both … and" - CCONJ, <tt>cc</tt>?</h4>
+							<pre><code class="conllu">
 # text[gloss] = my.father and , my.mother and against were .
 1	Атам	_	NOUN	_	_	7	nsubj	_	_
 2	да	_	CCONJ	_	_	1	cc	_	_
@@ -517,8 +523,8 @@
 6	каршы	_	ADJ	_	_	7	xcomp	_	_
 7	болду	_	VERB	_	_	0	root	_	_
 8	.	_	PUNCT	_	_	7	punct	_	_
-						</code></pre>
-					</div>
+							</code></pre>
+						</div>
 					</div>
 				</section>
 
