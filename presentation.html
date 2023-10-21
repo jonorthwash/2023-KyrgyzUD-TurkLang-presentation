@@ -484,8 +484,65 @@
 				<section>
 					<h2>Challenges: small words: да</h2>
 					<div class="highlight-box">
-						<h4>"even (if)" - SCONJ, <tt>advmod</tt>?</h4>
+						<h4>Uses of <em>да</em></h4>
+						<ol>
+							<li><span class="highlight">Post-predicate "modal particle"</span><br/>
+							<ex>Натыйжалар жарыяланыптыр <u>да</u>, ээ?</ex><br/>
+							‘The results have been announced, haven't they?’</li>
+							<li><span class="highlight">Conditional intensifier</span><br/>
+							<ex>Оозу кыйшык болсо <u>да</u>, байдын уулу сүйлөсүн.</ex><br/>
+							‘<u>Even</u> if his mouth is crooked, let the rich person's son speak.’</li>
+							<li><span class="highlight">General contrastive intensifier</span><br/>
+							<ex>Тамашада <u>да</u> чындыктын үлүшү бар.</ex><br/>
+							‘<u>Even</u> in a joke is some element of truth.’</li>
+							<li><span class="highlight">General conjoining adverb</span><br/>
+							<ex>Атам <u>да</u> каршы болду.</ex><br/>
+							‘My father was <u>also</u> against it.’  (or: ‘<u>Even</u> my father was against it.’)</li>
+							<li><span class="highlight">Correlative conjunction</span><br/>
+							<ex>Атам <u>да</u>, апам <u>да</u> каршы болду.</ex><br/>
+							‘<u>Both</u> my father <u>and</u> my mother were against it.’</li>
+						</ol>
+						<hr/>
+						<p>Uses 2&amp;3, 3&amp;4, 4&amp;5 seem very similar: we treat the same</p>
+						</ul>
+					</div>
+				</section>
+				<section>					
+					<h2>Challenges: small words: да</h2>
+					<div class="highlight-box">
+						<h4>Use 1: <tt>PART</tt>, <tt>discourse</tt></h4>
 						<pre><code class="conllu">
+# sent_id = 15
+# text = Натыйжалар жарыяланыптыр да, ээ?
+# text[en] = The results have been announced, haven't they?
+1	Натыйжалар	натыйжа	NOUN	n.pl.nom	Case=Nom|Number=Plur	2	nsubj	_	_
+2	жарыяланыптыр	жарыяла	VERB	v.tv.pass.ifi.evid.p3.pl	Evident=Nfh|Mood=Ind|Number=Plur|Person=3|Tense=Past|VerbForm=Fin|Voice=Pass	0	root	_	_
+3	да	да	PART	mod	_	2	discourse	_	SpaceAfter=No
+4	,	,	PUNCT	cm	_	2	punct	_	_
+5	ээ	ээ	PART	mod	_	2	discourse	_	SpaceAfter=No
+6	?	?	PUNCT	sent	_	2	punct	_	_
+						</code></pre>
+					</div>
+					<div class="highlight-box">
+						<h4>Uses 2-5: <tt>ADV</tt>, <tt>advmod:emph</tt></h4>
+						<pre><code class="conllu">
+# sent_id = proverbs:42
+# author = Сыргабековна&Сабыровна
+# source = Сыргабековна&Сабыровна:413
+# text = Тамашада да чындыктын үлүшү бар.
+# text[eng] = Even in a joke is some element of truth.
+# labels = cg-checked-jnw dep-initialchecked-jnw
+1	Тамашада	тамаша	NOUN	n.loc	Case=Loc	5	obl	_	_
+2	да	да	ADV	postadv	_	1	advmod:emph	_	_
+3	чындыктын	чындык	NOUN	n.gen	Case=Gen	4	nmod:poss	_	_
+4	үлүшү	үлүш	NOUN	n.px3sp.nom	Case=Nom|Number[psor]=Plur,Sing|Person[psor]=3	5	nsubj	_	_
+5-6	бар	_	_	_	_	_	_	_	_
+5	бар	бар	ADJ	adj	_	0	root	_	SpaceAfter=No
+6	_	э	AUX	cop.aor.p3.sg	Mood=Ind|Number=Sing|Person=3|Tense=Aor|VerbForm=Fin	5	cop	_	SpaceAfter=No
+7	.	.	PUNCT	sent	_	5	punct	_	_
+						</pre></code>
+					</div>
+						<!-- pre><code class="conllu">
 # sent_id = proverbs:15
 # author = Сыргабековна&Сабыровна
 # source = Сыргабековна&Сабыровна:342
@@ -543,7 +600,21 @@
 8	.	_	PUNCT	_	_	7	punct	_	_
 							</code></pre>
 						</div>
+					</div-->
+					<div class="highlight-box" style="padding-bottom: 0.5em">
+						<h4>Other analyses</h4>
+						<ul>
+							<li>Kyrgyz <refs>(<ref>Benli 2023</ref>)</refs></li>
+							<ul class="shrink">
+								<li><tt>CCONJ</tt>, <tt>mark</tt></li>
+							</ul>
+							<li>Kazakh <refs>(<ref>Tyers &amp; Washington 2015</ref>)</refs></li>
+							<ul class="shrink">
+								<li><tt>ADV</tt>, <tt>advmod</tt>, dependent on root (not preceding word)</li>
+							</ul>
+						</ul>
 					</div>
+
 				</section>
 
 				<section data-state="show-bar">
