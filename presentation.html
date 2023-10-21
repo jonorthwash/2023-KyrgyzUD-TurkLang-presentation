@@ -136,21 +136,22 @@
 					<h4>Timeline</h4>
 					<ul>
 						<li><bbb>2020</bbb>: <span class="highlight">Anna</span> puts together 86-sentence proverbs corpus, with supervision from <span class="highlight">Jonathan</span></li>
-						<li><bbb>2021</bbb>: <span class="highlight">Aida</span> starts working with students on proverbs, literature, and novel sentences</li>
+						<li><bbb>2021</bbb>: <span class="highlight">Aida</span> and <span class="highlight">Gulnura</span> start working with students on proverbs, literature, and novel sentences</li>
 						<li><bbb>2023</bbb>: current state:</li>
 						<ul class="shrink">
-							<li>sentences: ≥230</li>
-							<li>tokens: ≥1634</li>
+							<li>sentences: ≥270</li>
+							<li>tokens: ≥1910</li>
 							<li>Ongoing efforts to combine, check, unify annotations, add metadata, and expand</li>
 						</ul>
-						<li><bbb>Future</bbb>: submit as one large corpus</li>
+						<li><bbb>Future</bbb>: submit to UD project as one large corpus</li>
 					</ul>
 					</div>
 					<div class="highlight-box">
 						<h4>Tools leveraged in creation</h4>
 						<ul>
-							<li>Apertium morphological transducer (<tt><a href="https://github.com/apertium/apertium-kir">apertium-kir</a></tt>):<br/>to pre-process sentences (tokenisation, morphological analysis)</li>
-							<li><a href="https://jonorthwash.github.io/ud-annotatrix/">UD Annotatrix</a>: dependency annotation interface</li>
+							<li>Apertium morphological transducer (<tt><a href="https://github.com/apertium/apertium-kir">apertium-kir</a></tt>): <refs>(<ref>Washington et al. 2012</ref>)</refs><br/>to pre-process sentences (tokenisation, morphological analysis)</li>
+							<li><a href="https://jonorthwash.github.io/ud-annotatrix/">UD Annotatrix</a> <refs>(<ref>Tyers et al. 2017</ref>)</refs>: dependency annotation interface</li>
+							<li><a href="http://hdl.handle.net/21.11119/0000-0004-B62D-D">Manas-UdS Kyrgyz Corpus</a> <refs>(<ref>Kasieva et al. 2020</ref>)</refs>: source for sentences</refs>
 						</ul>
 					</div>
 				</section>
@@ -311,15 +312,19 @@
 3	болдум	бол	VERB	_	_	0	root	_	_
 4	.	.	PUNCT	_	_	3	punct	_	_
 						</code></pre>
-						<div class="highlight-box">
-							<h4>Other UD corpora</h4>
-							<ul>
-								<li>Kyrgyz <ref>Benli (2023)</ref>
-								<ul>
-`									<li>Complements of <ex>бол-</ex> analysed as <tt>amod</tt> dependents</li>
-								</ul>
+					</div>
+					<div class="highlight-box" style="clear: both; padding-bottom: 0.5em">
+						<h4>Other UD corpora</h4>
+						<ul>
+							<li>Kazakh <refs>(<ref>Tyers &amp; Washington 2015</ref>)</refs></li>
+							<ul class="shrink">
+								<li>Treated same as copula constructions</li>
 							</ul>
-						</div>
+							<li>Kyrgyz <refs>(<ref>Benli 2023</ref>)</refs>
+							<ul class="shrink">
+								<li>Complements of <ex>бол-</ex> analysed as <tt>amod</tt> dependents</li>
+							</ul>
+						</ul>
 					</div>
 
 					<!-- div>
@@ -448,18 +453,21 @@
 					</ul>
 					</div>
 					<div class="highlight-box">
-					<h4>PART, <tt>advmod</tt>?</h4>
+					<h4>PART, <tt>advmod:emph</tt></h4>
 					<pre><code class="conllu">
 # text[gloss] = three day pass-VN-ABL after just book-ACC I.turned.in .
 1	үч	_	NUM	_	_	2	nummod	_	_
 2	күн	_	NOUN	_	_	3	nsubj	_	_
 3	өткөндөн	_	VERB	_	_	7	advcl	_	_
 4	кийин	_	ADP	_	_	3	case	_	_
-5	эле	_	PART	_	_	3	advmod	_	_
+5	эле	_	PART	_	_	3	advmod:emph	_	_
 6	китепти	_	NOUN	_	_	7	obj	_	_
 7	тапшырдым	_	VERB	_	_	0	root	_	_
 8	.	_	PUNCT	_	_	7	punct	_	_
 					</code></pre>
+					</div>
+					<div class="highlight-box">
+						<h4>Other analyses</h4>
 					</div>
 				</section>
 
